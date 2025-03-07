@@ -1,6 +1,8 @@
 <head>
     <title>Wiki: Editing {{.Page.Title}}</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/js/edit.js"></script>
 </head>
 
 <body>
@@ -10,11 +12,24 @@
         <a class="edit-link" href="/view/{{.Page.Title}}">Cancel</a>
     </div>
     <div class="page-content">
-        <form action="/save/{{.Page.Title}}" method="POST">
-            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
-            <textarea name="body">{{printf "%s" .Page.Body}}</textarea>
-            <button type="submit">Save</button>
-        </form>
+        <div class="page-editor">
+            <div class="page-editor-view flex flex-1" data-view="raw" data-active="true">
+                <form action="/save/{{.Page.Title}}" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+                    <textarea name="body">{{printf "%s" .Page.Body}}</textarea>
+                    <div class="flex flex-row justify-end gap-2">
+                        <button type="button" data-action="preview">Preview</button>
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div class="page-editor-view" data-view="preview">
+                <div class="rendered-markdown"></div>
+                <div class="flex flex-row justify-end w-full">
+                    <button type="button" data-action="preview">Preview</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

@@ -1,14 +1,18 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     line-height: 1.6;
-    padding: 20px;
     display: flex;
     justify-content: center;
 }
 
 .container {
     width: 800px;
-    padding: 20px;
-    border-radius: 8px;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -42,6 +46,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 
 /* Styled textarea */
@@ -54,7 +59,9 @@ textarea {
     font-family: "Courier New", monospace;
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
-    min-height: 250px;
+    min-height: 1rem;
+    max-height: 50vh;
+    width: 100%;
 }
 
 /* Improve textarea focus */
@@ -63,7 +70,7 @@ textarea:focus {
 }
 
 /* Styled submit button */
-button[type="submit"] {
+button {
     align-self: flex-end;
     border: 1px solid black;
     padding: 8px 15px;
@@ -76,6 +83,7 @@ button[type="submit"] {
 .page-header {
     display: flex;
     align-items: baseline;
+    gap: 0.5rem;
 }
 
 .page-header h1 {
@@ -84,9 +92,25 @@ button[type="submit"] {
 
 .page-content {
     margin-top: 1rem;
+    width: 100%;
 }
 
 /* Wiki content styling */
 .wiki-content {
     font-size: 1rem;
+}
+
+.page-editor {
+    position: relative;
+}
+
+.page-editor-view {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+}
+
+.page-editor-view[data-active="true"] {
+    display: flex;
 }

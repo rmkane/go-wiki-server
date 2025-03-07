@@ -71,13 +71,13 @@ textarea:focus {
     border-color: var(--button-hover);
 }
 
-button[type="submit"] {
+button {
     background: var(--button-background);
     color: var(--text-color);
     border-color: var(--input-border);
 }
 
-button[type="submit"]:hover {
+button:hover {
     background: var(--button-hover);
     border-color: var(--button-hover);
 }
