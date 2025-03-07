@@ -1,0 +1,154 @@
+/* Default to dark mode */
+:root {
+    --background-color: #222;
+    --text-color: #eee;
+    --content-background: #2a2a2a;
+    --content-border: #444;
+    --input-background: #333;
+    --input-border: #555;
+    --button-background: #444;
+    --button-hover: #555;
+    --link-color: #4da6ff;
+    --link-hover: #80c1ff;
+}
+
+/* Explicitly set light mode if the user prefers it */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #f8f8f8;
+        --text-color: #111;
+        --content-background: #fff;
+        --content-border: #ddd;
+        --input-background: #f9f9f9;
+        --input-border: #ccc;
+        --button-background: #ddd;
+        --button-hover: #bbb;
+        --link-color: #0056b3;
+        --link-hover: #003580;
+    }
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 800px;
+    background: var(--content-background);
+    border: 1px solid var(--content-border);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: var(--content-border);
+    margin: 15px 0;
+}
+
+/* Links (Edit, wiki links, etc.) */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Styled edit button */
+.edit-link {
+    display: inline-block;
+    background: var(--button-background);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.edit-link:hover {
+    background: var(--button-hover);
+}
+
+/* Form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Styled textarea */
+textarea {
+    field-sizing: content;
+    flex: 1;
+    background: var(--input-background);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    padding: 10px;
+    font-size: 1rem;
+    font-family: "Courier New", monospace;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+    min-height: 250px;
+}
+
+/* Improve textarea focus */
+textarea:focus {
+    outline: none;
+    border-color: var(--button-hover);
+}
+
+/* Styled submit button */
+button[type="submit"] {
+    align-self: flex-end;
+    background: var(--button-background);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+/* Hover and focus effects */
+button[type="submit"]:hover {
+    background: var(--button-hover);
+    border-color: var(--button-hover);
+}
+
+.page-header {
+    display: flex;
+    align-items: baseline;
+    border-bottom: thin solid var(--content-border);
+}
+
+.page-header h1 {
+    flex: 1;
+}
+
+.page-content {
+    margin-top: 1rem;
+}
+
+/* Wiki content styling */
+.wiki-content {
+    white-space: pre-wrap; /* Preserve newlines */
+    font-size: 1rem;
+}

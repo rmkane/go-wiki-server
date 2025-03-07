@@ -1,0 +1,20 @@
+<head>
+    <title>Wiki: Editing {{.Page.Title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Editing {{.Page.Title}}</h1>
+        <a class="edit-link" href="/view/{{.Page.Title}}">Cancel</a>
+    </div>
+    <div class="page-content">
+        <form action="/save/{{.Page.Title}}" method="POST">
+            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+            <textarea name="body">{{printf "%s" .Page.Body}}</textarea>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+</body>

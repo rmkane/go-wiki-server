@@ -1,0 +1,17 @@
+<head>
+    <title>Wiki: Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Wiki Home</h1>
+    <hr>
+    <ul>
+        {{range .Pages}}
+        <li><a href="/view/{{.}}">{{.}}</a></li>
+        {{end}}
+    </ul>
+    <p><a class="edit-link" href="/edit/NewPage">Create a new page</a></p>
+</div>
+</body>
