@@ -9,14 +9,14 @@ import (
 )
 
 func EditHandler(w http.ResponseWriter, r *http.Request, title string) {
-	p, err := model.LoadPage(title)
+	page, err := model.LoadPage(title)
 	if err != nil {
-		p = &model.Page{Title: title}
+		page = &model.Page{Title: title}
 	}
 
-	data := model.PageData{
-		Page:      p,
-		CSRFToken: security.GenerateCSRFToken(), // Add CSRF token separately
+	data, err := security.WrapPage(page)
+	if err != nil {
+		http.Error(w, "Failed to add CSRF token", http.StatusInternalServerError)
 	}
 
 	render.RenderTemplate(w, "edit", data)

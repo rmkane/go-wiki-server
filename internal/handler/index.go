@@ -3,13 +3,13 @@ package handler
 import (
 	"net/http"
 	"path/filepath"
-	
-	"github.com/rmkane/go-wiki-server/internal/model"
+
+	"github.com/rmkane/go-wiki-server/internal/constants"
 	"github.com/rmkane/go-wiki-server/internal/render"
 )
 
 func RootHandler(w http.ResponseWriter, r *http.Request) {
-	files, err := filepath.Glob(filepath.Join(model.DataDir, "*.txt"))
+	files, err := filepath.Glob(filepath.Join(constants.DataDir, "*.txt"))
 	if err != nil {
 		http.Error(w, "Unable to load pages", http.StatusInternalServerError)
 		return

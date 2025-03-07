@@ -1,0 +1,92 @@
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    line-height: 1.6;
+    color: #333; /* Dark gray for readability */
+    background-color: #fafafa; /* Light background for contrast */
+    margin: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    max-width: 60ch; /* Optimal reading width */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", "Georgia", serif;
+    font-weight: 700;
+    margin: 1.5rem 0 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1rem;
+    color: #666; /* Slightly muted for distinction */
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    font-weight: 600;
+}
+
+em {
+    font-style: italic;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    background: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2rem 0;
+}

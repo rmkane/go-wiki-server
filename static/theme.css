@@ -1,0 +1,87 @@
+/* Default to dark mode */
+:root {
+    --background-color: #222;
+    --text-color: #eee;
+    --content-background: #2a2a2a;
+    --content-border: #444;
+    --input-background: #333;
+    --input-border: #555;
+    --button-background: #444;
+    --button-hover: #555;
+    --link-color: #4da6ff;
+    --link-hover: #80c1ff;
+}
+
+/* Explicitly set light mode if the user prefers it */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #f8f8f8;
+        --text-color: #111;
+        --content-background: #fff;
+        --content-border: #ddd;
+        --input-background: #f9f9f9;
+        --input-border: #ccc;
+        --button-background: #ddd;
+        --button-hover: #bbb;
+        --link-color: #0056b3;
+        --link-hover: #003580;
+    }
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    background: var(--content-background);
+    border: 1px solid var(--content-border);
+}
+
+hr {
+    background: var(--content-border);
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/* Styled edit button */
+.edit-link {
+    background: var(--button-background);
+    color: var(--text-color);
+}
+
+.edit-link:hover {
+    background: var(--button-hover);
+}
+
+/* Styled textarea */
+textarea {
+    background: var(--input-background);
+    color: var(--text-color);
+    border-color: var(--input-border);
+}
+
+textarea:focus {
+    border-color: var(--button-hover);
+}
+
+button[type="submit"] {
+    background: var(--button-background);
+    color: var(--text-color);
+    border-color: var(--input-border);
+}
+
+button[type="submit"]:hover {
+    background: var(--button-hover);
+    border-color: var(--button-hover);
+}
+
+.page-header {
+    border-bottom: thin solid var(--content-border);
+}
